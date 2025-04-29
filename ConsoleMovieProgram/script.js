@@ -3,14 +3,14 @@
 let numberOfFilms;
 
 function start() {
-  numberOfFilms = +prompt("Скільки фільмів ви переглянули ?", "0");
+  numberOfFilms = +prompt("Скільки фільмів ви переглянули ?", "0").trim();
 
   while (
     numberOfFilms === "" ||
     numberOfFilms === null ||
     isNaN(numberOfFilms)
   ) {
-    numberOfFilms = +prompt("Скільки фільмів ви переглянули ?", "0");
+    numberOfFilms = +prompt("Скільки фільмів ви переглянули ?", "0").trim();
   }
 }
 start();
@@ -42,8 +42,10 @@ function detectPersonalLevel(count) {
 
 function rememberMyFilms(movies) {
   for (let i = 0; i < 2; i++) {
-    const movie = prompt("Один з останніх фільмів, який ви переглянули?");
-    const rating = prompt("На скільки його оціните?");
+    const movie = prompt(
+      "Один з останніх фільмів, який ви переглянули?"
+    ).trim();
+    const rating = prompt("На скільки його оціните?").trim();
     movie === "" ||
     movie === null ||
     rating === null ||
@@ -57,7 +59,9 @@ function rememberMyFilms(movies) {
 
 function writeYourGenres(genres) {
   for (let i = 0; i < 3; i++) {
-    const favoritegenre = prompt(`Ваш улублений жанр під номером ${i + 1}`);
+    const favoritegenre = prompt(
+      `Ваш улублений жанр під номером ${i + 1}`
+    ).trim();
     genres[i] = favoritegenre;
   }
 }
